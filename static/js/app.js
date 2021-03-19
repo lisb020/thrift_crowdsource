@@ -1,52 +1,98 @@
-// function buildTable() {
+function buildTable() {
+  /* data route */
+  const url = "/api/clothes";
+  d3.json(url).then(function(response) {
+
+    console.log(response);
+
+    const data = response;
+
+    for (let responses of data) {
+    let rows = d3.select(".underHeader")
+        .append("div")
+        .classed("row rowData", true);
+      rows.selectAll(".items")  
+        .data(Object.entries(responses))
+        .enter()
+        .append("div")
+        .classed("col-md items", true)
+        .append("p")
+        .text(d => d[1]);
+    };
+  });
+};
+buildTable();
+// function Test() {
 //   /* data route */
-//   const url = "/api/clothes";
-//   d3.json(url).then(function(response) {
+//   const response = [
+//     {
+//         "color": "Blue",
+//         "condition": "Like New",
+//         "item": "Rain Pants",
+//         "maxprice": 500.0,
+//         "name": "Lisa",
+//         "notes": "none",
+//         "size": "3T"
+//     },
+//     {
+//         "color": "Blue",
+//         "condition": "Like New",
+//         "item": "Rain Pants",
+//         "maxprice": 500.0,
+//         "name": "Lisa",
+//         "notes": "none",
+//         "size": "3T"
+//     },
+//     {
+//         "color": "Blue",
+//         "condition": "Like New",
+//         "item": "Rain Pants",
+//         "maxprice": 500.0,
+//         "name": "Lisa",
+//         "notes": "none",
+//         "size": "3T"
+//     },
+//     {
+//         "color": "Blue",
+//         "condition": "Like New",
+//         "item": "Rain Pants",
+//         "maxprice": 500.0,
+//         "name": "Lisa",
+//         "notes": "none",
+//         "size": "3T"
+//     },
+//     {
+//         "color": "Blue",
+//         "condition": "Like New",
+//         "item": "Rain Pants",
+//         "maxprice": 500.0,
+//         "name": "Lisa",
+//         "notes": "none",
+//         "size": "3T"
+//     },
+//     {
+//         "color": "Green",
+//         "condition": "ew",
+//         "item": "Jeans",
+//         "maxprice": 4,
+//         "name": "Lulu",
+//         "notes": "yane",
+//         "size": "6"
+//     }
+// ];
+//     const data = response;
 
-//     console.log(response);
-
-//     const data = response[0];
-//     //const col = d3.select("#items").append("div").classed("col-md entry", true);
-//     d3.select("#items").selectAll(".entry")
-//       .data(data)
+//   for (let responses of data) {
+//    let rows = d3.select(".underHeader")
+//       .append("div")
+//       .classed("row rowData", true);
+//     rows.selectAll(".items")  
+//       .data(Object.entries(responses))
 //       .enter()
 //       .append("div")
-//       .classed("col-md entry", true)
+//       .classed("col-md items", true)
 //       .append("p")
-//       .text(function(keys, items){data.keys});
-//       //.html(`<div class="col-md entry"><p>insert data</p></div>`)
-//   });
+//       .text(d => d[1]);
+//   };
 // };
-// buildTable();
-function Test() {
-  /* data route */
-  const response = [{
-    "item": ["pants", "shirt"],
-    "size": ["3T", "6"],
-    "name": ["Lisa", "Mary"],
-    "color": ["blue", "dont care"],
-    "maxprice": [500, 20],
-    "condition": ["like new", "new"],
-    "notes": ["nothing", "i like"]
-  }];
-  console.log(response);
-
-    const data = response[0];
-    //const col = d3.select("#items").append("div").classed("col-md entry", true);
-    for (let i in data) {
-      console.log("i",i,"data[i]", data[i]);
-      for (let j in data[i]){
-        console.log(data[i][j])
-      }
-  }
-    d3.select("#items").selectAll(".entry")
-      //.data(Object.keys(data))
-      .data(Object.entries(data))
-      .enter()
-      .append("div")
-      .classed("col-md entry", true)
-      .append("p")
-      .text((d) => d[1][0]);
-      //.html(`<div class="col-md entry"><p>insert data</p></div>`)
-};
-Test();
+// Test();

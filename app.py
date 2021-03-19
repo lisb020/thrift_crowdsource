@@ -59,25 +59,29 @@ def form():
 
 @app.route("/api/clothes")
 def clothes():
-    results = db.session.query(Thrift.item, Thrift.size, Thrift.name, Thrift.color, Thrift.maxprice, Thrift.condition, Thrift.notes).all()
+    results = db.session.query(Thrift.id, Thrift.item, Thrift.size, Thrift.name, Thrift.color, Thrift.maxprice, Thrift.condition, Thrift.notes).all()
 
-    item = [result[0] for result in results]
-    size = [result[1] for result in results]
-    name = [result[2] for result in results]
-    color = [result[3] for result in results]
-    maxprice = [result[4] for result in results]
-    condition = [result[5] for result in results]
-    notes = [result[6] for result in results]
-
-    thrift_data = [{
-        "item": item,
-        "size": size,
-        "name": name,
-        "color": color,
-        "maxprice": maxprice,
-        "condition": condition,
-        "notes": notes
-    }]
+    id = [result[0] for result in results]
+    item = [result[1] for result in results]
+    size = [result[2] for result in results]
+    name = [result[3] for result in results]
+    color = [result[4] for result in results]
+    maxprice = [result[5] for result in results]
+    condition = [result[6] for result in results]
+    notes = [result[7] for result in results]
+    
+    thrift_data = []
+    
+    for i in range(len(id)):
+        thrift_data.append({
+        "item": item[i],
+        "size": size[i],
+        "name": name[i],
+        "color": color[i],
+        "maxprice": maxprice[i],
+        "condition": condition[i],
+        "notes": notes[i]
+        })
 
     return jsonify(thrift_data)
 
