@@ -46,42 +46,40 @@ def send():
         notes = request.form["thriftNotes"]
 
         thrift = Thrift(item=item, size=size, name=name, color=color, maxprice=maxprice, condition=condition, notes=notes)
-        # db.session.add(thrift)
-        # db.session.commit()
-        #return redirect("/", code=302)
-        return item
-        #return "hello"
+        db.session.add(thrift)
+        db.session.commit()
+        return redirect("/", code=302)
 
-    #return redirect("/", code=302)
+    return redirect("/", code=302)
 
 @app.route("/form")
 def form():
     return render_template("form.html")
 
 
-# @app.route("/api/clothes")
-# def clothes():
-#     results = db.session.query(Thrift.item, Thrift.size, Thrift.name, Thrift.color, Thrift.maxprice, Thrift.condition, Thrift.notes).all()
+@app.route("/api/clothes")
+def clothes():
+    results = db.session.query(Thrift.item, Thrift.size, Thrift.name, Thrift.color, Thrift.maxprice, Thrift.condition, Thrift.notes).all()
 
-#     item = [result[0] for result in results]
-#     size = [result[1] for result in results]
-#     name = [result[2] for result in results]
-#     color = [result[3] for result in results]
-#     maxprice = [result[4] for result in results]
-#     condition = [result[5] for result in results]
-#     notes = [result[6] for result in results]
+    item = [result[0] for result in results]
+    size = [result[1] for result in results]
+    name = [result[2] for result in results]
+    color = [result[3] for result in results]
+    maxprice = [result[4] for result in results]
+    condition = [result[5] for result in results]
+    notes = [result[6] for result in results]
 
-#     thrift_data = [{
-#         "item": item,
-#         "size": size,
-#         "name": name,
-#         "color": color,
-#         "maxprice": maxprice,
-#         "condition": condition,
-#         "notes": notes
-#     }]
+    thrift_data = [{
+        "item": item,
+        "size": size,
+        "name": name,
+        "color": color,
+        "maxprice": maxprice,
+        "condition": condition,
+        "notes": notes
+    }]
 
-#     return jsonify(thrift_data)
+    return jsonify(thrift_data)
 
 
 if __name__ == "__main__":
