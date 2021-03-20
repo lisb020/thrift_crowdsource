@@ -29,7 +29,7 @@ function buildTable() {
     };
   });
 };
-
+buildTable();
 // function Test2() {
 //   /* data route */
 //   const response = [ 
