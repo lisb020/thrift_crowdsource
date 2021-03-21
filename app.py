@@ -80,11 +80,15 @@ def clothes():
         "color": color[i],
         "maxprice": maxprice[i],
         "condition": condition[i],
-        "notes": notes[i]
+        "notes": notes[i],
+        "id": id[i]
         })
 
     return jsonify(thrift_data)
 
+# @app.route("/remove", methods=["GET", "POST"])
+# def remove():
+#     if request.method == "POST":
 
 if __name__ == "__main__":
     app.run()
