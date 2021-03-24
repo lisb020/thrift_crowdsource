@@ -86,9 +86,11 @@ def clothes():
 
     return jsonify(thrift_data)
 
-# @app.route("/remove", methods=["GET", "POST"])
-# def remove():
-#     if request.method == "POST":
+@app.route("/remove", methods=["GET", "POST"])
+def remove():
+    if request.method == "POST":
+        return jsonify("hello")
+return jsonify("kind of fail")
 
 if __name__ == "__main__":
     app.run()
