@@ -91,7 +91,7 @@ def remove():
     if request.method == "POST":
         #db.session.remove
         print(id)
-        return id
+        return jsonify(id)
     return jsonify("kind of fail")
 
 if __name__ == "__main__":
