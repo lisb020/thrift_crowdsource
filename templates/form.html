@@ -12,7 +12,7 @@
     
     <!-- Bring in our own stylesheet -->
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
-
+    <link rel="stylesheet" href="/static/css/style.css">
     <body>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
@@ -25,30 +25,37 @@
                         <div class="form-group">
                             <label for="inputItem">Clothes Item</label>
                             <input type="text" class="form-control" id="inputItem" name="thriftItem" placeholder="Item">
+                            <div id="errorItem" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="inputSize">Clothes Size</label>
                             <input type="text" class="form-control" id="inputSize" name="thriftSize" placeholder="Size">
+                            <div id="errorSize" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="inputName">Your Name</label>
                             <input type="text" class="form-control" id="inputName" name="thriftName" placeholder="Name">
+                            <div id="errorName" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="inputColor">Color of Item</label>
                             <input type="text" class="form-control" id="inputColor" name="thriftColor" placeholder="Color">
+                            <div id="errorColor" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="inputMaxprice">Max Price</label>
                             <input type="text" class="form-control" id="inputMaxprice" name="thriftMaxprice" placeholder="Max Price">
+                            <div id="errorPrice" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="inputCondition">Condition of Clothes</label>
                             <input type="text" class="form-control" id="inputCondition" name="thriftCondition" placeholder="Condition">
+                            <div id="errorCondition" class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="inputNotes">Additional Notes</label>
                             <input type="text" class="form-control" id="inputNotes" name="thriftNotes" placeholder="Notes">
+                            <div id="errorNotes" class="error"></div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

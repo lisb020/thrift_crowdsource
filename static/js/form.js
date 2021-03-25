@@ -1,33 +1,16 @@
-//https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
-
-var myTextbox = document.getElementById('inputMaxprice');
-myTextbox.addEventListener('keypress', checkName, false);
-
-function checkName(evt) {
-    var charCode = evt.key;
-    console.log(charCode);
-//     if (charCode != 0) {
-//       if (charCode < 97 || charCode > 122) {
-//         evt.preventDefault();
-//         displayWarning(
-//           "Please use lowercase letters only."
-//           + "\n" + "charCode: " + charCode + "\n"
-//         );
-//       }
-//     }
-   };
 function validateMyForm(){
   $('body').on('click', '.btn', function(event){
     let myTextbox = document.getElementById('inputMaxprice');
+    document.getElementsByClassName('error').innerHTML = '';
     if (!isNaN(myTextbox.value)) {
-      alert('is a number', myTextbox.value);
+      alert('is a number');
       return true;
     } 
     else {
       myTextbox.style.borderColor = "#e60000";
-      //document.getElementById("qty").innerHTML = "&nbsp;&nbsp;enter valid quantity.*";
+      document.getElementById('errorPrice').innerHTML = "&nbsp;&nbsp;*Enter numbers only.";
       myTextbox.focus();
-      alert('not a number, form not submitted', myTextbox.value);
+      alert('Check inputs, form not submitted');
       return false;
     }
       //if d3.select

@@ -41,7 +41,7 @@ def send():
         size = request.form["thriftSize"]
         name = request.form["thriftName"]
         color = request.form["thriftColor"]
-        maxprice = request.form["thriftMaxprice"]
+        maxprice = float(request.form["thriftMaxprice"])
         condition = request.form["thriftCondition"]
         notes = request.form["thriftNotes"]
 
