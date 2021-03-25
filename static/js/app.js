@@ -2,13 +2,13 @@ $('body').on('click', '.btn', function(event){
   let userConfirm = confirm("Are you sure you want to delete this record?");
   if (userConfirm){
     let id=event.target.id;
+    console.log(id)
     //trigger function to remove from database
     const url = "/remove"
-    const data = id
     // console.log("json", id)
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(data)
+      body: JSON.stringify(id)
     })
     .then(res => res.json())
     .then(data => {
