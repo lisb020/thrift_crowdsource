@@ -8,6 +8,9 @@ $('body').on('click', '.btn', function(event){
     // console.log("json", id)
     fetch(url, {
       method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(id)
     })
     .then(res => res.json())
