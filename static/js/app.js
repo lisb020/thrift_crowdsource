@@ -21,11 +21,9 @@ function buildTable() {
   d3.json(url).then(function(response) {
     
     keyOrder = ["item", "size", "name", "color", "maxprice","condition", "notes", "id"];
-    console.log(response);
 
     for (let i = 0; i < response.length; i++){
       for (const key of keyOrder){
-          console.log(key);
           if (key == "item"){
             let rowCol = d3.select(".underHeader")
             .append("div")
