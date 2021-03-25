@@ -89,13 +89,13 @@ def clothes():
 @app.route("/remove", methods=["GET", "POST"])
 def remove():
     if request.method == "POST":
-        # jsdata = request.form['id']
-        # print(jsdata)
         content = request.get_json()
-        print (content)
-        #db.session.remove
-        return jsonify("success")
-    return jsonify("kind of fail")
+        content = int(content.split("id")[1])
+        #delete record from database
+        Thrift.query.filter_by(id=content).delete()
+        db.session.commit()
+        return redirect("/", code=302)
+    return redirect("/", code=302)
 
 if __name__ == "__main__":
     app.run()

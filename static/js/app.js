@@ -5,19 +5,14 @@ $('body').on('click', '.btn', function(event){
     console.log(id)
     //trigger function to remove from database
     const url = "/remove"
-    // console.log("json", id)
+
     fetch(url, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(id)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log("Request complete! response:", data);
     });
-    // $.post(url,{ "id": id});
   };
 });
 function buildTable() {
