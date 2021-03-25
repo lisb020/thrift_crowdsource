@@ -4,10 +4,10 @@ $('body').on('click', '.btn', function(event){
     let id=event.target.id;
     //trigger function to remove from database
     const url = "/remove"
-    console.log("json", JSON.stringify(id))
+    console.log("json", id)
     fetch(url, {
       method: "POST",
-      body: JSON.stringify(id)
+      body: id
     }).then(res => {
       console.log("Request complete! response:", res);
     });
