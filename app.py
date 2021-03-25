@@ -89,9 +89,10 @@ def clothes():
 @app.route("/remove", methods=["GET", "POST"])
 def remove():
     if request.method == "POST":
-        jsdata = request.form['javascript_data']
-        return json.loads(jsdata)[0]
-    return jsonify("fail")
+        #db.session.remove
+        print(id)
+        return id
+    return jsonify("kind of fail")
 
 if __name__ == "__main__":
     app.run()
