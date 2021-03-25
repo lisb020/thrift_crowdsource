@@ -15,7 +15,24 @@ function checkName(evt) {
 //         );
 //       }
 //     }
-   }
+   };
+function validateMyForm(){
+  $('body').on('click', '.btn', function(event){
+    let myTextbox = document.getElementById('inputMaxprice');
+    if (!isNaN(myTextbox.value)) {
+      alert('is a number', myTextbox.value);
+      return true;
+    } 
+    else {
+      myTextbox.style.borderColor = "#e60000";
+      //document.getElementById("qty").innerHTML = "&nbsp;&nbsp;enter valid quantity.*";
+      myTextbox.focus();
+      alert('not a number, form not submitted', myTextbox.value);
+      return false;
+    }
+      //if d3.select
+  });
+};
 
 // var warningTimeout;
 // var warningBox = document.createElement("div");
