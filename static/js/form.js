@@ -1,5 +1,4 @@
 function validateMyForm(){
-  $('body').on('click', '.btn', function(event){
     let myTextbox = document.getElementById('inputMaxprice');
     document.getElementsByClassName('error').innerHTML = '';
     if (!isNaN(myTextbox.value)) {
@@ -13,8 +12,6 @@ function validateMyForm(){
       alert('Check inputs, form not submitted');
       return false;
     }
-      //if d3.select
-  });
 };
 
 // var warningTimeout;
