@@ -14,8 +14,12 @@ input:required:invalid {
   border-color: #c00000;
 }
 #video{
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  z-index: -1;
+  top: 0;
+  left: 0;
 }
 @media (min-aspect-ratio: 16/9){
   #video{
@@ -34,7 +38,7 @@ input:required:invalid {
     display: none;
   }
   body{
-    background: url('/media/poster.png');
+    background: url("/static/media/poster.png");
     background-size: cover;
   }
 }
