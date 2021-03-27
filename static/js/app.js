@@ -1,4 +1,4 @@
-$('body').on('click', '.btn', function(event){
+$('body').on('click', '.delbtn', function(event){
   let userConfirm = confirm("Are you sure you want to delete this record?");
   if (userConfirm){
     let id=event.target.id;

@@ -81,35 +81,6 @@ def form():
     return render_template("form.html")
 
 
-# @app.route("/api/clothes")
-# def clothes():
-#     results = db.session.query(Thrift.id, Thrift.item, Thrift.size, Thrift.name, Thrift.color, Thrift.maxprice, Thrift.condition, Thrift.notes).all()
-
-#     id = [result[0] for result in results]
-#     item = [result[1] for result in results]
-#     size = [result[2] for result in results]
-#     name = [result[3] for result in results]
-#     color = [result[4] for result in results]
-#     maxprice = [result[5] for result in results]
-#     condition = [result[6] for result in results]
-#     notes = [result[7] for result in results]
-    
-#     thrift_data = []
-    
-#     for i in range(len(id)):
-#         thrift_data.append({
-#         "item": item[i],
-#         "size": size[i],
-#         "name": name[i],
-#         "color": color[i],
-#         "maxprice": maxprice[i],
-#         "condition": condition[i],
-#         "notes": notes[i],
-#         "id": id[i]
-#         })
-
-#     return jsonify(thrift_data)
-
 # Remove item from database based on id
 @app.route("/remove", methods=["GET", "POST"])
 def remove():

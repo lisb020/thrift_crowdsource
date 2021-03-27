@@ -13,6 +13,7 @@
     <!-- Bring in our own stylesheet -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <link rel="shortcut icon" href="#">
     <body>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
@@ -21,44 +22,46 @@
             </div>
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
-                    <form onsubmit="validateMyForm()" method="POST" action="/send" role="form", name="thriftform">
+                    <form method="POST" action="/send" role="form", name="thriftform">
                         <div class="form-group">
-                            <label for="inputItem">Clothes Item</label>
-                            <input type="text" class="form-control" id="inputItem" name="thriftItem" placeholder="Item">
+                            <label for="inputItem">Clothes Item*</label>
+                            <input required type="text" class="form-control" id="inputItem" name="thriftItem" placeholder="Item">
                             <div id="errorItem" class="error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="inputSize">Clothes Size</label>
-                            <input type="text" class="form-control" id="inputSize" name="thriftSize" placeholder="Size">
+                            <label for="inputSize">Clothes Size*</label>
+                            <input required type="text" class="form-control" id="inputSize" name="thriftSize" placeholder="Size">
                             <div id="errorSize" class="error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="inputName">Your Name</label>
-                            <input type="text" class="form-control" id="inputName" name="thriftName" placeholder="Name">
+                            <label for="inputName">Your Name*</label>
+                            <input required type="text" class="form-control" id="inputName" name="thriftName" placeholder="Name">
                             <div id="errorName" class="error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="inputColor">Color of Item</label>
-                            <input type="text" class="form-control" id="inputColor" name="thriftColor" placeholder="Color">
+                            <label for="inputColor">Color of Item*</label>
+                            <input required type="text" class="form-control" id="inputColor" name="thriftColor" placeholder="Color">
                             <div id="errorColor" class="error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="inputMaxprice">Max Price</label>
-                            <input type="text" class="form-control" id="inputMaxprice" name="thriftMaxprice" placeholder="Max Price">
+                            <label for="inputMaxprice">Max Price (numbers only)*</label>
+                            <input required type="number" class="form-control" id="inputMaxprice" name="thriftMaxprice" placeholder="Max Price">
                             <div id="errorPrice" class="error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="inputCondition">Condition of Clothes</label>
-                            <input type="text" class="form-control" id="inputCondition" name="thriftCondition" placeholder="Condition">
+                            <label for="inputCondition">Condition of Clothes*</label>
+                            <input required type="text" class="form-control" id="inputCondition" name="thriftCondition" placeholder="Condition">
                             <div id="errorCondition" class="error"></div>
                         </div>
                         <div class="form-group">
-                            <label for="inputNotes">Additional Notes</label>
-                            <input type="text" class="form-control" id="inputNotes" name="thriftNotes" placeholder="Notes">
+                            <label for="inputNotes">Additional Notes*</label>
+                            <input required type="text" class="form-control" id="inputNotes" name="thriftNotes" placeholder="Notes">
                             <div id="errorNotes" class="error"></div>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
+                    <br>
+                    <br>
                 </div>
             </div>
 

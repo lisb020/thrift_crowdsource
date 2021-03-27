@@ -1,4 +1,40 @@
-.error {
-    color: #dc0707;
-    font-weight: bold;
+/* Selects any invalid <input> */
+label {
+  display: block;
+  margin: 1px;
+  padding: 1px;
+}
+
+.field {
+  margin: 1px;
+  padding: 1px;
+}
+
+input:required:invalid {
+  border-color: #c00000;
+}
+#video{
+  position: fixed;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9){
+  #video{
+    width:100%;
+    height: auto;
   }
+}
+@media (max-aspect-ratio: 16/9){
+  #video{
+    width:auto;
+    height: 100%;
+  }
+}
+@media (max-width: 767px){
+  #video{
+    display: none;
+  }
+  body{
+    background: url('/media/poster.png');
+    background-size: cover;
+  }
+}
