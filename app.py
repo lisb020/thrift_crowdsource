@@ -26,7 +26,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 Thrift = create_classes(db)
-
+thrift_data = []
 #create route that renders index.html template and query the database and send thrift_data variable to index.html
 @app.route("/")
 def home():
@@ -42,7 +42,6 @@ def home():
     notes = [result[7] for result in results]
     
     thrift_data = []
-    
     for i in range(len(id)):
         thrift_data.append({
         "item": item[i],
@@ -90,8 +89,8 @@ def remove():
         #delete record from database
         Thrift.query.filter_by(id=content).delete()
         db.session.commit()
-        return redirect("/", code=302)
-    return redirect("/", code=302)
+
+        return redirect("/")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
