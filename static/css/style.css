@@ -23,15 +23,20 @@ input:required:invalid {
 .jumbotron{
   font-weight: bold;
 }
+.col-md-8{
+  background-color: paleturquoise;
+}
 .grid-list{
   background-color: paleturquoise;
+  padding: 30px;
 }
 
 body{
-  background-image: url("/static/media/Flowers.png");
-  background-size: cover;
+  background-image:url("/static/media/Flowers.png");
+  background-size: 100% auto;
   /*background-attachment: fixed;*/
 }
-/* body{
-  background-color: paleturquoise;
-} */
+.col-md-2, .col-md-1{
+  border: #5a5a5a thin solid;
+
+}

@@ -32,56 +32,88 @@
             </div>
             
             <div class="row">
-                <div class="col-md">
-                    <h5>Item</h5>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <h5>Item</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Size</h5>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <h5>Size</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Name</h5>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <h5>Name</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Color</h5>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <h5>Color</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Max Price</h5>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <h5>Max Price</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Condition</h5>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <h5>Condition</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Notes</h5>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <h5>Notes</h5>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <h5>Item Purchased?</h5>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <h5>Item Purchased?</h5>
+                    </div>
                 </div>
             </div>
             {% for item in database %}
                 <div class="row rowData">
-                <div class="col-md">
-                    <p>{{ item.item }}</p>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <p>{{ item.item }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <p>{{ item.size }}</p>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <p>{{ item.size }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <p>{{ item.name }}</p>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <p>{{ item.name }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <p>{{ item.color }}</p>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <p>{{ item.color }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <p>{{ item.maxprice }}</p>
+                <div class="col-md-1">
+                    <div class=contents>
+                        <p>{{ item.maxprice }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <p>{{ item.condition }}</p>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <p>{{ item.condition }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <p>{{ item.notes }}</p>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <p>{{ item.notes }}</p>
+                    </div>
                 </div>
-                <div class="col-md">
-                    <button type='button' class='btn btn-primary btn-sm delbtn' id= 'id{{ item.id }}'>Remove</button>
+                <div class="col-md-2">
+                    <div class=contents>
+                        <button type='button' class='btn btn-primary btn-sm delbtn' id= 'id{{ item.id }}'>Remove</button>
+                    </div>
                 </div>
                 </div>
             {% endfor %}
