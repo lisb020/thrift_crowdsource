@@ -23,9 +23,11 @@ input:required:invalid {
 .jumbotron{
   font-weight: bold;
 }
+/* background color for form */
 .col-md-8{
   background-color: paleturquoise;
 }
+
 .grid-list{
   background-color: paleturquoise;
   padding: 30px;
@@ -36,7 +38,7 @@ body{
   background-size: 100% auto;
   /*background-attachment: fixed;*/
 }
-.col-sm-2, .col-sm-1{
+.col-2, .col-1{
   border: #5a5a5a thin solid;
 
 }
@@ -49,18 +51,24 @@ body{
     font-family:'Courier New', Courier, monospace;
   }
   h5{
-    font-size: small;
+    font-size: 60%;
   }
   p{
-    font-size: x-small;
+    font-size: 50%;
+  }
+  .col-2, .col-1{
+    padding-left: 2px;
   }
   }
   /* for phones */
 @media only screen and (max-width: 576px){
   h5{
-    font-size: xx-small;
+    font-size: 50%;
   }
   p{
-    font-size: xx-small;
+    font-size: 40%;
+  }
+  .col-2, .col-1{
+    padding-left: 2px;
   }
   }
