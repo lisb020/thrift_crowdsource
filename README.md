@@ -43,4 +43,4 @@ The app.py python program connects to the SQL database by calling the "create_cl
 - The '/remove' route gets the JSON sent from the webpage along with the class which contains the id of the record. It uses that id to delete the record from the database.
 
 #### JavaScript - app.js
-This javascript file runs when the "remove" button is clicked on the main.html page. It sends a confirm message to the user. If the user presses "cancel", nothing will happen. If the user presses "Ok", the function will post the class of the html element that was clicked. It will send that JSON to the `/remove` route.
+This javascript file runs when the "remove" button is clicked on the main.html page. It sends a confirm message to the user. If the user presses "cancel", nothing will happen. If the user presses "Ok", the function will post the class of the html element that was clicked. It will send that JSON to the '/remove' route.
